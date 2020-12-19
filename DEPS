@@ -38,7 +38,7 @@ vars = {
   'yarn_version': '1.15.2',
 
   # To be able to build clean Chromium from sources.
-  'apply_patches': True,
+  'apply_patches': False,
 
   # Python interface to Amazon Web Services. Is used for releases only.
   'checkout_boto': False,
