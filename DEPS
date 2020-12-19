@@ -27,7 +27,7 @@ vars = {
   'requests_version': 'e4d59bedfd3c7f4f254f4f5d036587bcd8152458',
 
   'boto_git': 'https://github.com/boto',
-  'chromium_git': 'https://github.com/libcamera-org',
+  'custom_chromium_git': 'https://github.com/libcamera-org',
   'electron_git': 'https://github.com/electron',
   'nodejs_git': 'https://github.com/nodejs',
   'requests_git': 'https://github.com/kennethreitz',
@@ -84,7 +84,7 @@ vars = {
 
 deps = {
   'src': {
-    'url': (Var("chromium_git")) + '/chromium.git@' + (Var("chromium_version")),
+    'url': (Var("custom_chromium_git")) + '/chromium.git@' + (Var("chromium_version")),
     'condition': 'checkout_chromium and process_deps',
   },
   'src/third_party/nan': {
