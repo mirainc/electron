@@ -40,6 +40,11 @@ vars = {
   # To be able to build clean Chromium from sources.
   'apply_patches': False,
 
+  # Apply bare minimum patches to be able to complete Electron build,
+  # due to `is_mas_build` being injected into Chromium config by Electron
+  # and expected to be present.
+  'apply_patches_minimal': True,
+
   # Python interface to Amazon Web Services. Is used for releases only.
   'checkout_boto': False,
 
@@ -122,6 +127,16 @@ deps = {
 }
 
 hooks = [
+  {
+    'name': 'patch_chromium_minimal',
+    'condition': '(checkout_chromium and apply_patches_minimal) and process_deps',
+    'pattern': 'src/electron',
+    'action': [
+      'python3',
+      'src/electron/script/apply_all_patches.py',
+      'src/electron/patches/config_minimal.json',
+    ],
+  },
   {
     'name': 'patch_chromium',
     'condition': '(checkout_chromium and apply_patches) and process_deps',
