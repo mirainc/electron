@@ -1,0 +1,11 @@
+mas_blink_no_private_api.patch
+mas_no_private_api.patch
+mas-cfisobjc.patch
+mas-cgdisplayusesforcetogray.patch
+mas-audiodeviceduck.patch
+mas_disable_remote_layer.patch
+mas_disable_remote_accessibility.patch
+mas_disable_custom_window_frame.patch
+fix_disable_usage_of_abort_report_np_in_mas_builds.patch
+fix_disable_usage_of_pthread_fchdir_np_and_pthread_chdir_np_in_mas.patch
+use_public_apis_to_determine_if_a_font_is_a_system_font_in_mas_build.patch

@@ -1,5 +1,7 @@
 {
-  "src/electron/patches/chromium_minimal": "src",
+  "src/electron/patches/chromium": "src",
+
+  "src/electron/patches/chromium_mas": "src",
 
   "src/electron/patches/boringssl": "src/third_party/boringssl/src",
 

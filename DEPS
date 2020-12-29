@@ -38,12 +38,11 @@ vars = {
   'yarn_version': '1.15.2',
 
   # To be able to build clean Chromium from sources.
-  'apply_patches': False,
+  'apply_patches': True,
 
-  # Apply bare minimum patches to be able to complete Electron build,
-  # due to `is_mas_build` being injected into Chromium config by Electron
-  # and expected to be present.
-  'apply_patches_minimal': True,
+  # Apply mas patches to build for macOS.
+  # May error on sync if set to True on Linux.
+  'apply_mas_patches': False,
 
   # Python interface to Amazon Web Services. Is used for releases only.
   'checkout_boto': False,
@@ -128,13 +127,13 @@ deps = {
 
 hooks = [
   {
-    'name': 'patch_chromium_minimal',
-    'condition': '(checkout_chromium and apply_patches_minimal) and process_deps',
+    'name': 'patch_chromium_mas',
+    'condition': '(checkout_chromium and apply_mas_patches) and process_deps',
     'pattern': 'src/electron',
     'action': [
       'python3',
       'src/electron/script/apply_all_patches.py',
-      'src/electron/patches/config_minimal.json',
+      'src/electron/patches/config_mas.json',
     ],
   },
   {
