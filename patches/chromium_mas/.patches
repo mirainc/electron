@@ -10,3 +10,6 @@ fix_disable_usage_of_abort_report_np_in_mas_builds.patch
 fix_disable_usage_of_pthread_fchdir_np_and_pthread_chdir_np_in_mas.patch
 use_public_apis_to_determine_if_a_font_is_a_system_font_in_mas_build.patch
 cherry-pick-2f5b8357dca2.patch
+cherry-pick-8f5a08079948.patch
+cherry-pick-275865e8c237.patch
+cherry-pick-47e21abe349a.patch
