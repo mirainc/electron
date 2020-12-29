@@ -1,3 +1,4 @@
 build_gn.patch
 gtk_visibility.patch
 resource_file_conflict.patch
+gritsettings_resource_ids.patch
